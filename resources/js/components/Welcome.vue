@@ -1,9 +1,7 @@
 <template>
     <div class="greeting">
         <h1>Привет, мир!</h1>
-        <button class="mdc-button mdc-button--raised">
-            <span class="mdc-button__label">Нажми меня!</span>
-        </button>
+        <md-filled-button label="Нажми меня!">Нажми меня!</md-filled-button>
     </div>
 </template>
 

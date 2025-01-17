@@ -6,6 +6,7 @@
     <title>Mini Web App</title>
 </head>
 <body>
+<div id="app"></div>
 @vite('resources/js/app.js') <!-- Подключение JavaScript -->
 </body>
 </html>
