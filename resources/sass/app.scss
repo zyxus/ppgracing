@@ -1,8 +1,31 @@
-// Fonts
-@import url('https://fonts.bunny.net/css?family=Nunito');
+:root {
+    --md-sys-typescale-body-large-font: 'Roboto', sans-serif;
+}
 
-// Variables
-@import 'variables';
+body {
+    background-color: #1b232b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Устанавливаем Roboto */
+}
 
-// Bootstrap
-@import 'bootstrap/scss/bootstrap';
+.container {
+    background-color: #1b232b;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* Стили для кнопки */
+md-filled-button, md-branded-fab {
+    --md-sys-color-primary: #e17740; /* Оранжевый цвет кнопки */
+    --md-sys-color-on-primary: #fff; /* Белый текст */
+    font-family: 'Roboto', sans-serif;
+}
