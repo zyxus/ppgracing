@@ -1,0 +1,29 @@
+{
+    "exclude": [
+        ".git/**",
+        ".github/**",
+        "node_modules/**",
+        "vendor/**",
+        "storage/debugbar/**",
+        "storage/framework/cache/**",
+        "storage/framework/sessions/**",
+        "storage/framework/testing/**",
+        "storage/framework/views/**",
+        "storage/logs/**",
+        ".env",
+        ".env.example",
+        ".gitignore",
+        ".editorconfig",
+        ".gitattributes",
+        "composer.lock",
+        "package-lock.json",
+        "yarn.lock",
+        "phpunit.xml",
+        "tests/**",
+        "docker/**",
+        "docker-compose.yml",
+        "Makefile",
+        "readme.md",
+        "README.md"
+    ]
+}
