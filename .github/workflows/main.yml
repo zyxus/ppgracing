@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main  # Укажи свою основную ветку
+  workflow_dispatch:
 
 jobs:
   deploy:
