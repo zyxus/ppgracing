@@ -10,20 +10,20 @@ import '@material/web/textfield/filled-text-field.js';
 import '@material/web/textfield/outlined-text-field.js';
 import '@material/web/fab/branded-fab.js';
 import '@material/web/icon/icon.js';
+import {
+    argbFromHex,
+    themeFromSourceColor,
+    applyTheme
+} from "@material/material-color-utilities";
 
 const app = createApp(Greeting);
 app.mount('#app');
 
-
-
-
-import { argbFromHex, themeFromSourceColor, applyTheme } from "@material/material-color-utilities";
-
 // Get the theme from a hex color
-const theme = themeFromSourceColor(argbFromHex('#f82506'), [
+const theme = themeFromSourceColor(argbFromHex('#E88439'), [
     {
         name: "custom-1",
-        value: argbFromHex("#ff0000"),
+        value: argbFromHex("#E88439"),
         blend: true,
     },
 ]);
