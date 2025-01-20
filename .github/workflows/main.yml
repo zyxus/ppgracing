@@ -1,4 +1,4 @@
-name: 🚀 Laravel FTP & SSH Deploy
+name: 🚀 Deploy Laravel via SSH + Git Pull
 
 on:
   push:
@@ -10,29 +10,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: 🚀 Установка SSH-соединения
+        uses: webfactory/ssh-agent@v0.8.0
         with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: "/var/www/html/"  # Измени на нужный путь
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
+      - name: 📦 Подключение по SSH и деплой
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} << 'EOF'
             cd ${{ secrets.DEPLOY_PATH }}
+            git reset --hard
+            git pull origin main
             composer install --no-dev --optimize-autoloader
             npm install && npm run build
-            chmod -R 775 storage bootstrap/cache
             php artisan config:cache
             php artisan route:cache
             php artisan view:cache
             php artisan migrate --force
+            php artisan queue:restart
+            chmod -R 775 storage bootstrap/cache
+          EOF
