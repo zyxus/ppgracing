@@ -22,6 +22,7 @@ const hideKeyboard = () => {
     <Layout title="Регистрация">
         <div class="container">
             <div class="card mx-auto p-4 form-container">
+
                 <h5>Привет гонщик!</h5>
                 <p class="small mt-3 mb-4">Зарегистрируйся, чтобы получить доступ к чемпионатам и все такое...</p>
 
@@ -32,7 +33,7 @@ const hideKeyboard = () => {
                         <input type="text"
                                ref="firstNameInput"
                                class="form-control custom-input"
-                               enterkeyhint="next"
+                               enterkeyhint="done"
                                @keydown.enter.prevent="hideKeyboard"
                                required />
                     </div>
