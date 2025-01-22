@@ -56,6 +56,7 @@ import Layout from '../layouts/Layout.vue';
                         </small>
                     </p>
 
+                    <button type="submit" style="position: absolute; left: -9999px;">Готово</button>
 
                 </form>
 
