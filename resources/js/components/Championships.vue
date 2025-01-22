@@ -1,9 +1,8 @@
 <script>
-import UserRegistrationForm from "./UserRegistrationForm.vue";
 import Navigation from "./Navigation.vue";
 
 export default {
-    components: {Navigation, UserRegistrationForm},
+    components: {Navigation},
     mounted() {
         // Для базовой кнопки можно не использовать дополнительную настройку
     }
@@ -12,7 +11,6 @@ export default {
 
 <template>
     <div class="container">
-        <UserRegistrationForm />
         <Navigation />
     </div>
 </template>
