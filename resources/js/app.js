@@ -17,20 +17,11 @@ document.addEventListener('focusout', function () {
     window.scrollTo(0, 0);
 });
 
-document.addEventListener('click', function (event) {
-    if (!event.target.closest('input, textarea')) {
-        document.activeElement.blur();
-    }
-});
-
-function isTelegramDesktop() {
-    return navigator.userAgent.includes("TelegramDesktop");
-}
-
-if (isTelegramDesktop()) {
-    document.body.style.transform = "scale(0.7)"; // Уменьшаем масштаб
-    document.body.style.transformOrigin = "top center"; // Фиксируем центрирование
-}
+// document.addEventListener('click', function (event) {
+//     if (!event.target.closest('input, textarea')) {
+//         document.activeElement.blur();
+//     }
+// });
 
 document.addEventListener("DOMContentLoaded", function() {
     window.onload = function () {
