@@ -28,6 +28,12 @@ function isTelegramDesktop() {
 }
 
 if (isTelegramDesktop()) {
-    document.body.style.transform = "scale(0.9)"; // Уменьшаем масштаб
+    document.body.style.transform = "scale(0.7)"; // Уменьшаем масштаб
     document.body.style.transformOrigin = "top center"; // Фиксируем центрирование
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    window.onload = function () {
+        document.body.classList.add("loaded"); // Убирает прелоадер после загрузки
+    };
+});

@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
+<div id="preloader">
+    <i class="fas fa-gear fa-spin"></i>
+</div>
 <div id="app"></div>
 @vite('resources/js/app.js')
 </body>
