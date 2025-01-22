@@ -1,5 +1,21 @@
 <script setup>
 import Layout from '../layouts/Layout.vue';
+
+import { ref } from 'vue';
+
+const name = ref('');
+const surname = ref('');
+
+const focusNext = (nextInput) => {
+    const nextElement = document.querySelector(`input[name="${nextInput}"]`);
+    if (nextElement) {
+        nextElement.focus();
+    }
+};
+
+const submitForm = () => {
+    alert("Форма отправлена!");
+};
 </script>
 
 <template>
@@ -17,17 +33,32 @@ import Layout from '../layouts/Layout.vue';
 
                     <div class="input-group mb-3">
                         <span class="input-group-text small" id="name">Имя</span>
-                        <input type="text" id="firstName" class="form-control custom-input" required />
+                        <input type="text"
+                               id="firstName"
+                               class="form-control custom-input"
+                               v-model="name"
+                               enterkeyhint="next"
+                               @keydown.enter.prevent="focusNext('email')"
+                               required />
                     </div>
 
                     <div class="input-group mb-3">
                         <span class="input-group-text small" id="surname">Фамилия</span>
-                        <input type="text" id="lastName" class="form-control custom-input" required />
+                        <input type="text"
+                               id="lastName"
+                               class="form-control custom-input"
+                               v-model="surname"
+                               enterkeyhint="next"
+                               @keydown.enter.prevent="focusNext('country')"
+                               required />
                     </div>
 
                     <div class="input-group">
-                        <select class="form-select" aria-label="Выбери страну" required>
-                            <option>Cтрана</option>
+                        <select class="form-select"
+                                aria-label="Выбери страну"
+
+                                required>
+                            <option selected>Cтрана</option>
                             <option>Австрия</option>
                             <option>Германия</option>
                             <option>Дания</option>
@@ -35,8 +66,10 @@ import Layout from '../layouts/Layout.vue';
                             <option>Южная Африка</option>
                         </select>
 
-                        <select class="form-select" aria-label="Выбери город" required>
-                            <option>Город</option>
+                        <select class="form-select"
+                                aria-label="Выбери город"
+                                required>
+                            <option selected>Город</option>
                             <option>Астрахань</option>
                             <option>Белгород</option>
                             <option>Москва</option>
@@ -46,7 +79,8 @@ import Layout from '../layouts/Layout.vue';
                     </div>
 
                     <div class="d-flex justify-content-center mt-4">
-                        <button type="submit" class="btn btn-primary custom-button">Зарегистрироваться</button>
+                        <button type="submit"
+                                class="btn btn-primary custom-button">Зарегистрироваться</button>
                     </div>
 
                     <p class="small mt-3 mb-4">
