@@ -6,11 +6,9 @@ const firstNameInput = ref(null);
 const lastNameInput = ref(null);
 
 const focusNext = (nextRef) => {
-    nextTick(() => {
-        if (nextRef.value) {
-            nextRef.value.focus();
-        }
-    });
+    setTimeout(() => {
+        nextRef?.value?.focus();
+    }, 10); // ⚡️ Добавляем небольшую задержку, чтобы iOS обработал переход
 };
 
 const hideKeyboard = () => {
@@ -28,7 +26,7 @@ const hideKeyboard = () => {
                 <form @submit.prevent class="form">
                     <!-- Имя -->
                     <div class="input-group mb-3">
-                        <span class="input-group-text small" id="name">Имя</span>
+                        <span class="input-group-text small">Имя</span>
                         <input type="text"
                                ref="firstNameInput"
                                class="form-control custom-input"
@@ -39,7 +37,7 @@ const hideKeyboard = () => {
 
                     <!-- Фамилия -->
                     <div class="input-group mb-3">
-                        <span class="input-group-text small" id="surname">Фамилия</span>
+                        <span class="input-group-text small">Фамилия</span>
                         <input type="text"
                                ref="lastNameInput"
                                class="form-control custom-input"
@@ -50,7 +48,7 @@ const hideKeyboard = () => {
 
                     <!-- Страна и город -->
                     <div class="input-group">
-                        <select class="form-select" aria-label="Выбери страну" required>
+                        <select class="form-select" required>
                             <option selected>Cтрана</option>
                             <option>Австрия</option>
                             <option>Германия</option>
@@ -59,7 +57,7 @@ const hideKeyboard = () => {
                             <option>Южная Африка</option>
                         </select>
 
-                        <select class="form-select" aria-label="Выбери город" required>
+                        <select class="form-select" required>
                             <option selected>Город</option>
                             <option>Астрахань</option>
                             <option>Белгород</option>
