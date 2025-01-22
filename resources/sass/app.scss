@@ -1,14 +1,54 @@
-@import "colors";
+// 1️⃣ Импортируем функции (они нужны перед переменными)
+@import 'bootstrap/scss/functions';
 
-* {
-    font-family: 'Roboto', sans-serif;
-}
+// 2️⃣ Настраиваем переменные до их использования
+$body-bg: #121212;       // Тёмный фон
+$body-color: #ffffff;    // Белый текст
+$primary: #ff9800;       // Оранжевый цвет кнопок и акцентов
 
+// Добавляем кастомный цвет в `$theme-colors`
+$theme-colors: (
+    "primary": $primary,
+    "dark": $body-bg,
+    "light": $body-color
+);
+
+$card-border-width: 1px;
+$card-border-color: rgba(255, 255, 255, 0.2);
+$card-bg: #1a1a1a;
+$card-color: #ffffff;
+
+// 3️⃣ Теперь импортируем переменные Bootstrap
+@import 'bootstrap/scss/variables';
+
+// 4️⃣ Подключаем миксины (они используют переменные)
+@import 'bootstrap/scss/mixins';
+
+// 5️⃣ Подключаем карты (зависит от `variables`)
+@import 'bootstrap/scss/maps';
+
+// 6️⃣ Подключаем утилиты (зависят от всего выше)
+@import 'bootstrap/scss/utilities';
+
+// 7️⃣ Подключаем Bootstrap (последний шаг!)
+@import 'bootstrap/scss/bootstrap';
+
+// 8️⃣ Кастомные стили (чтобы убедиться, что всё применилось)
 body {
-    padding: 40px 20px;
-    background-color: $backgroundCustom;
+    background-color: $body-bg !important;
+    color: $body-color !important;
 }
 
-.container {
-    background-color: $backgroundCustom;
+a {
+    color: $primary;
+}
+
+.btn-primary {
+    background-color: $primary !important;
+    border-color: darken($primary, 10%) !important;
+
+    &:hover {
+        background-color: lighten($primary, 5%) !important;
+        border-color: darken($primary, 15%) !important;
+    }
 }

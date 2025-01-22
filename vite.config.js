@@ -11,19 +11,20 @@ export default defineConfig({
             ],
             refresh: true,
         }),
-        vue({
-            template: {
-                transformAssetUrls: {
-                    base: null,
-                    includeAbsolute: false,
-                },
-            },
-        }),
+        vue(),
     ],
     resolve: {
         alias: {
             vue: 'vue/dist/vue.esm-bundler.js',
-            '@resources': '/resources',
+        },
+    },
+    server: {
+        host: '127.0.0.1',  // или '0.0.0.0' для доступа из локальной сети
+        port: 5173,
+        strictPort: true,
+        cors: true,  // 🔥 Включает CORS
+        hmr: {
+            host: '127.0.0.1',  // или 'localhost'
         },
     },
 });

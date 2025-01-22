@@ -26,7 +26,7 @@ const props = defineProps({
 </template>
 
 <style scoped>
-.mb-3 {
-    margin-bottom: 16px;
-}
+//.mb-3 {
+//    margin-bottom: 16px;
+//}
 </style>
