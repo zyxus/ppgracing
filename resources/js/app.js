@@ -13,15 +13,15 @@ const app = createApp(Greeting);
 app.use(router);
 app.mount('#app');
 
-document.addEventListener('focusout', function () {
-    window.scrollTo(0, 0);
-});
+// чтобы клавиатура скрывалась на телефоне при клике в пустое место или потере фокуса на инпуте
+document.addEventListener('touchstart', function(event) {
+    const activeElement = document.activeElement;
 
-// document.addEventListener('click', function (event) {
-//     if (!event.target.closest('input, textarea')) {
-//         document.activeElement.blur();
-//     }
-// });
+    // Проверяем, не является ли текущий элемент <select>
+    if (activeElement && activeElement.tagName !== "SELECT") {
+        activeElement.blur();
+    }
+});
 
 document.addEventListener("DOMContentLoaded", function() {
     window.onload = function () {
