@@ -2,7 +2,7 @@
 
     <div class="container">
 
-        <div class="card mx-auto mt-4 p-4">
+        <div class="card mx-auto mt-4 p-4 form-container">
 
             <h5>Привет гонщик!</h5>
 
@@ -40,9 +40,18 @@
                     </select>
                 </div>
 
-                <div class="mt-4">
+                <div class="d-flex justify-content-center mt-4">
                     <button type="submit" class="btn btn-primary custom-button">Зарегистрироваться</button>
                 </div>
+
+                <p class="small mt-3 mb-4">
+                    <small class="text-xs custom-text text-center d-block">
+                        Регистрируясь в системе, ты принимаешь нашу политику обработки персональных данных, которая
+                        заключается в том, что ты предоставляешь нам все данные на свой страх и риск )))
+                    </small>
+                </p>
+
+
             </form>
 
             <AppButton />
@@ -60,5 +69,15 @@ function onSubmit() {
 <style scoped lang="scss">
 #name, #surname {
     width: 100px;
+}
+.custom-text {
+    opacity: 0.5;
+    text-align: center;
+}
+.form-container {
+    background: rgba(0, 0, 0, 0.65);
+    border-radius: 10px;
+    padding: 20px;
+    backdrop-filter: blur(1px);
 }
 </style>

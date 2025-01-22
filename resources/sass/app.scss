@@ -38,7 +38,10 @@ $input-group-addon-bg: $primary;
 
 // 8️⃣ Кастомные стили (чтобы убедиться, что всё применилось)
 body {
-    background-color: $body-bg !important;
+    background: url('/images/ppg-bot-bg.png') no-repeat center center fixed;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.85);
+    background-blend-mode: multiply;
     color: $body-color !important;
 }
 
