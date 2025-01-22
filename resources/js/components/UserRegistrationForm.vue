@@ -2,7 +2,7 @@
 
     <div class="container">
 
-        <div class="card w-75 mx-auto mt-4 p-4">
+        <div class="card mx-auto mt-4 p-4">
 
             <h5>Привет гонщик!</h5>
 
