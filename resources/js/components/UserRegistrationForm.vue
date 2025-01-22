@@ -2,7 +2,7 @@
 
     <div class="container">
 
-        <div class="card mx-auto mt-4 p-4 form-container">
+        <div class="card mx-auto p-4 form-container">
 
             <h5>Привет гонщик!</h5>
 
@@ -73,6 +73,13 @@ function onSubmit() {
 .custom-text {
     opacity: 0.5;
     text-align: center;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 .form-container {
     background: rgba(0, 0, 0, 0.65);
