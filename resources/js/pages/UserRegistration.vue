@@ -38,7 +38,7 @@ const submitForm = () => {
                                class="form-control custom-input"
                                v-model="name"
                                enterkeyhint="next"
-                               @keydown.enter.prevent="focusNext('email')"
+                               @keydown.enter.prevent="focusNext('surname')"
                                required />
                     </div>
 
@@ -48,8 +48,7 @@ const submitForm = () => {
                                id="lastName"
                                class="form-control custom-input"
                                v-model="surname"
-                               enterkeyhint="next"
-                               @keydown.enter.prevent="focusNext('country')"
+                               enterkeyhint="done"
                                required />
                     </div>
 
