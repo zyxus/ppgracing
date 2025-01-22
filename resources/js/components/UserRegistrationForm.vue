@@ -1,49 +1,53 @@
 <template>
 
-    <div class="card mt-4 p-4">
+    <div class="container">
 
-        <h5>Привет гонщик!</h5>
+        <div class="card w-75 mx-auto mt-4 p-4">
 
-        <p>Для начала зарегистрируйся, чтобы получить доступ к чемпионатам и все такое...</p>
+            <h5>Привет гонщик!</h5>
 
-        <form @submit.prevent="onSubmit" class="form">
+            <p class="small mt-3 mb-4">Для начала зарегистрируйся, чтобы получить доступ к чемпионатам и все такое...</p>
 
-            <div class="mb-3">
-                <label for="firstName" class="form-label label-custom">Имя</label>
-                <input type="text" id="firstName" class="form-control custom-input" required />
-            </div>
+            <form @submit.prevent="onSubmit" class="form">
 
-            <div class="mb-3">
-                <label for="lastName" class="form-label label-custom">Фамилия</label>
-                <input type="text" id="lastName" class="form-control custom-input" required />
-            </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text small" id="name">Имя</span>
+                    <input type="text" id="firstName" class="form-control custom-input" required />
+                </div>
 
-            <div class="mb-3">
-                <label for="location" class="form-label label-custom">Cтрана</label>
-                <select class="form-select" aria-label="Выбери страну" required>
-                    <option>Австрия</option>
-                    <option>Германия</option>
-                    <option>Дания</option>
-                    <option>Россия</option>
-                    <option>Южная Африка</option>
-                </select>
-            </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text small" id="surname">Фамилия</span>
+                    <input type="text" id="lastName" class="form-control custom-input" required />
+                </div>
 
-            <div class="mb-3">
-                <label for="location" class="form-label label-custom">Город</label>
-                <select class="form-select" aria-label="Выбери город" required>
-                    <option>Астрахань</option>
-                    <option>Белгород</option>
-                    <option>Москва</option>
-                    <option>Санкт-Петербург</option>
-                    <option>Ярославль</option>
-                </select>
-            </div>
+                <div class="input-group">
+                    <select class="form-select" aria-label="Выбери страну" required>
+                        <option>Cтрана</option>
+                        <option>Австрия</option>
+                        <option>Германия</option>
+                        <option>Дания</option>
+                        <option>Россия</option>
+                        <option>Южная Африка</option>
+                    </select>
 
-            <button type="submit" class="btn btn-primary custom-button">Зарегистрироваться</button>
-        </form>
-        <AppButton />
+                    <select class="form-select" aria-label="Выбери город" required>
+                        <option>Город</option>
+                        <option>Астрахань</option>
+                        <option>Белгород</option>
+                        <option>Москва</option>
+                        <option>Санкт-Петербург</option>
+                        <option>Ярославль</option>
+                    </select>
+                </div>
 
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary custom-button">Зарегистрироваться</button>
+                </div>
+            </form>
+
+            <AppButton />
+
+        </div>
     </div>
 </template>
 
@@ -54,34 +58,7 @@ function onSubmit() {
 </script>
 
 <style scoped lang="scss">
-//@use '../../sass/colors.scss' as *;
-//
-//.custom-button {
-//    width: 100%;
-//    margin: 32px 0 0;
-//    border-radius: 5px;
-//    background-color: $primaryCustom;
-//    border: none;
-//    color: $textCustom;
-//
-//    &:hover {
-//        background-color: $primaryCustomHover;
-//        color: $textCustom;
-//    }
-//}
-//
-//.form {
-//    max-width: 400px;
-//    margin: 0 auto;
-//    padding: 16px;
-//}
-//
-//.label-custom {
-//    color: $textCustom;
-//}
-//
-//.custom-input:focus {
-//    border-color: $primaryCustom;
-//    box-shadow: 0 0 0 0.1rem $primaryCustomHover;
-//}
+#name, #surname {
+    width: 100px;
+}
 </style>

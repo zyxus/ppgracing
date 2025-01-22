@@ -18,6 +18,9 @@ $card-border-color: rgba(255, 255, 255, 0.2);
 $card-bg: #1a1a1a;
 $card-color: #ffffff;
 
+$input-group-addon-color: #1a1a1a;
+$input-group-addon-bg: $primary;
+
 // 3️⃣ Теперь импортируем переменные Bootstrap
 @import 'bootstrap/scss/variables';
 
