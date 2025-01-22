@@ -1,14 +1,16 @@
 <script setup>
 import Layout from '../layouts/Layout.vue';
-import { ref } from 'vue';
+import { ref, nextTick } from 'vue';
 
 const firstNameInput = ref(null);
 const lastNameInput = ref(null);
 
 const focusNext = (nextRef) => {
-    if (nextRef.value) {
-        nextRef.value.focus();
-    }
+    nextTick(() => {
+        if (nextRef.value) {
+            nextRef.value.focus();
+        }
+    });
 };
 
 const hideKeyboard = () => {
