@@ -1,10 +1,14 @@
+@import "colors";
+
 * {
     font-family: 'Roboto', sans-serif;
-    --md-sys-color-primary: #E88439 !important;
-    --md-sys-color-secondary: blue;
 }
 
 body {
     padding: 40px 20px;
-    background-color: #202938;
+    background-color: $backgroundCustom;
+}
+
+.container {
+    background-color: $backgroundCustom;
 }
