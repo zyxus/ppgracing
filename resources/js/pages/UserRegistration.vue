@@ -1,62 +1,54 @@
 <script setup>
 import Layout from '../layouts/Layout.vue';
-
 import { ref } from 'vue';
 
-const name = ref('');
-const surname = ref('');
+const firstNameInput = ref(null);
+const lastNameInput = ref(null);
 
-const focusNext = (nextInput) => {
-    const nextElement = document.querySelector(`input[name="${nextInput}"]`);
-    if (nextElement) {
-        nextElement.focus();
+const focusNext = (nextRef) => {
+    if (nextRef.value) {
+        nextRef.value.focus();
     }
 };
 
-const submitForm = () => {
-    alert("Форма отправлена!");
+const hideKeyboard = () => {
+    document.activeElement.blur();
 };
 </script>
 
 <template>
-<!--    <Layout title="Регистрация" hideNavbar>-->
     <Layout title="Регистрация">
         <div class="container">
-
             <div class="card mx-auto p-4 form-container">
-
                 <h5>Привет гонщик!</h5>
-
                 <p class="small mt-3 mb-4">Зарегистрируйся, чтобы получить доступ к чемпионатам и все такое...</p>
 
-                <form @submit.prevent="onSubmit" class="form">
-
+                <form @submit.prevent class="form">
+                    <!-- Имя -->
                     <div class="input-group mb-3">
                         <span class="input-group-text small" id="name">Имя</span>
                         <input type="text"
-                               id="firstName"
+                               ref="firstNameInput"
                                class="form-control custom-input"
-                               v-model="name"
                                enterkeyhint="next"
-                               @keydown.enter.prevent="focusNext('surname')"
+                               @keydown.enter.prevent="focusNext(lastNameInput)"
                                required />
                     </div>
 
+                    <!-- Фамилия -->
                     <div class="input-group mb-3">
                         <span class="input-group-text small" id="surname">Фамилия</span>
                         <input type="text"
-                               id="lastName"
+                               ref="lastNameInput"
                                class="form-control custom-input"
-                               v-model="surname"
                                enterkeyhint="done"
+                               @keydown.enter.prevent="hideKeyboard"
                                required />
                     </div>
 
+                    <!-- Страна и город -->
                     <div class="input-group">
-                        <select class="form-select"
-                                aria-label="Выбери страну"
-
-                                required>
+                        <select class="form-select" aria-label="Выбери страну" required>
                             <option selected>Cтрана</option>
                             <option>Австрия</option>
                             <option>Германия</option>
@@ -65,9 +57,7 @@ const submitForm = () => {
                             <option>Южная Африка</option>
                         </select>
 
-                        <select class="form-select"
-                                aria-label="Выбери город"
-                                required>
+                        <select class="form-select" aria-label="Выбери город" required>
                             <option selected>Город</option>
                             <option>Астрахань</option>
                             <option>Белгород</option>
@@ -77,30 +67,22 @@ const submitForm = () => {
                         </select>
                     </div>
 
+                    <!-- Кнопка регистрации -->
                     <div class="d-flex justify-content-center mt-4">
-                        <button type="submit"
-                                class="btn btn-primary custom-button">Зарегистрироваться</button>
+                        <button type="submit" class="btn btn-primary custom-button">Зарегистрироваться</button>
                     </div>
 
+                    <!-- Текст внизу -->
                     <p class="small mt-3 mb-4">
                         <small class="text-xs custom-text text-center d-block">
                             Регистрируясь в системе, ты принимаешь нашу политику обработки персональных данных, которая
                             заключается в том, что ты предоставляешь нам все данные на свой страх и риск <i class="fas fa-laugh"></i>
                         </small>
                     </p>
-
-                    <button type="submit" style="position: absolute; left: -9999px;">Готово</button>
-
                 </form>
-
-                <AppButton />
-
             </div>
-
         </div>
-
     </Layout>
-
 </template>
 
 <style scoped lang="scss">
@@ -124,5 +106,4 @@ const submitForm = () => {
     padding: 20px;
     backdrop-filter: blur(1px);
 }
-
 </style>
