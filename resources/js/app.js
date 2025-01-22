@@ -12,3 +12,22 @@ import Championships from "./components/Championships.vue";
 const app = createApp(Greeting);
 app.use(router);
 app.mount('#app');
+
+document.addEventListener('focusout', function () {
+    window.scrollTo(0, 0);
+});
+
+document.addEventListener('click', function (event) {
+    if (!event.target.closest('input, textarea')) {
+        document.activeElement.blur();
+    }
+});
+
+function isTelegramDesktop() {
+    return navigator.userAgent.includes("TelegramDesktop");
+}
+
+if (isTelegramDesktop()) {
+    document.body.style.transform = "scale(0.9)"; // Уменьшаем масштаб
+    document.body.style.transformOrigin = "top center"; // Фиксируем центрирование
+}

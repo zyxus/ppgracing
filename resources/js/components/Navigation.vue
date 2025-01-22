@@ -28,8 +28,8 @@ import { RouterLink } from 'vue-router';
     display: flex;
     align-items: center;
 
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(1px);
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
 }
 
 .custom-navbar .container {
