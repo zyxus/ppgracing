@@ -10,7 +10,7 @@ const routes = [
     {
         path: "/championships",
         name: "Championships",
-        component: () => import("../resources/js/components/Championships.vue"),
+        component: () => import("../resources/js/pages/Championships.vue"),
     },
 ];
 

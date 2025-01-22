@@ -1,5 +1,5 @@
 <script>
-import UserRegistrationForm from "./UserRegistrationForm.vue";
+import UserRegistrationForm from "../pages/UserRegistrationForm.vue";
 import Navigation from "./Navigation.vue";
 
 export default {

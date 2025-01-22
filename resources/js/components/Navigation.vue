@@ -1,27 +1,29 @@
-<template>
-
-
-    <nav class="navbar fixed-bottom navbar-dark custom-navbar">
-        <div class="container d-flex justify-content-evenly">
-            <RouterLink to="/championships" class="custom-btn">
-                <i class="fas fa-trophy custom-icon"></i>
-                <small class="custom-text">Чемпионаты</small>
-            </RouterLink>
-            <RouterLink to="/profile" class="custom-btn">
-                <i class="fas fa-user custom-icon"></i>
-                <small class="custom-text">Профиль</small>
-            </RouterLink>
-        </div>
-    </nav>
-
-
-</template>
-
 <script setup>
-import { RouterLink } from 'vue-router';
+import { Link } from '@inertiajs/vue3';
 </script>
 
-<style scoped>
+<template>
+    <nav class="navbar fixed-bottom navbar-dark custom-navbar">
+        <div class="container d-flex justify-content-between">
+            <Link href="/webapp" class="btn btn-secondary custom-btn d-flex flex-column align-items-center">
+                <i class="fas fa-trophy custom-icon"></i>
+                <small class="custom-text">Регистрация</small>
+            </Link>
+            <Link href="/webapp/championships" class="btn btn-secondary custom-btn d-flex flex-column align-items-center">
+                <i class="fas fa-trophy custom-icon"></i>
+                <small class="custom-text">Чемпионаты</small>
+            </Link>
+            <Link href="/webapp/profile" class="btn btn-secondary custom-btn d-flex flex-column align-items-center">
+                <i class="fas fa-user custom-icon"></i>
+                <small class="custom-text">Профиль</small>
+            </Link>
+        </div>
+    </nav>
+</template>
+
+<style scoped lang="scss">
+@use "../../sass/app.scss" as *;
+
 .custom-navbar {
     padding: 4px 0; /* Уменьшаем внутренние отступы, чтобы navbar стал ниже */
     height: 90px;
@@ -43,6 +45,7 @@ import { RouterLink } from 'vue-router';
     align-items: center;
     text-decoration: none;
     font-size: 12px;
+    color: $primary !important;
 }
 
 .custom-icon {
