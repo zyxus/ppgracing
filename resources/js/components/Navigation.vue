@@ -6,6 +6,10 @@ import { Link } from '@inertiajs/vue3';
     <nav class="navbar fixed-bottom navbar-dark custom-navbar">
         <div class="container d-flex justify-content-between">
             <Link href="/webapp" class="btn btn-secondary custom-btn d-flex flex-column align-items-center">
+                <i class="fas fa-home custom-icon"></i>
+                <small class="custom-text">Главная</small>
+            </Link>
+            <Link href="/webapp/register" class="btn btn-secondary custom-btn d-flex flex-column align-items-center">
                 <i class="fas fa-trophy custom-icon"></i>
                 <small class="custom-text">Регистрация</small>
             </Link>

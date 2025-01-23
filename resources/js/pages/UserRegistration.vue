@@ -1,6 +1,21 @@
 <script setup>
 import Layout from '../layouts/Layout.vue';
-import { ref, nextTick } from 'vue';
+import { ref, nextTick, onMounted } from 'vue';
+
+const isTelegram = ref(false);
+
+onMounted(() => {
+    if (window.Telegram && window.Telegram.WebApp) {
+        isTelegram.value = true; // WebApp открыт в Telegram
+        window.Telegram.WebApp.ready();
+
+        const user = window.Telegram.WebApp.initDataUnsafe?.user;
+        if (user) {
+            form.telegram_id = user.id;
+            form.name = user.first_name || '';
+        }
+    }
+});
 
 const firstNameInput = ref(null);
 const lastNameInput = ref(null);
@@ -23,7 +38,9 @@ const hideKeyboard = () => {
         <div class="container">
             <div class="card mx-auto p-4 form-container">
 
-                <h5>Привет гонщик!</h5>
+                <h5>Привет гонщик!
+
+                </h5>
                 <p class="small mt-3 mb-4">Зарегистрируйся, чтобы получить доступ к чемпионатам и все такое...</p>
 
                 <form @submit.prevent class="form">
