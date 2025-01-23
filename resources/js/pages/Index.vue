@@ -3,9 +3,9 @@ import Layout from '../layouts/Layout.vue';
 </script>
 
 <template>
-    <Layout title="Профиль">
+    <Layout title="Главная">
         <div class="container text-center">
-            <h1>Индекс</h1>
+            <h1>Главная</h1>
         </div>
     </Layout>
 </template>

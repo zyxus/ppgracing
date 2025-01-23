@@ -38,7 +38,7 @@ const hideKeyboard = () => {
         <div class="container">
             <div class="card mx-auto p-4 form-container">
 
-                <h5>Привет гонщик!
+                <h5>Привет, гонщик!
 
                 </h5>
                 <p class="small mt-3 mb-4">Зарегистрируйся, чтобы получить доступ к чемпионатам и все такое...</p>
