@@ -21,6 +21,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(Kernel $kernel): void
     {
-        $kernel->appendMiddlewareToGroup('web', CheckTelegramUser::class);
+//        $kernel->appendMiddlewareToGroup('web', CheckTelegramUser::class);
     }
 }
