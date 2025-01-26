@@ -14,7 +14,12 @@ class PPGBotWebhookHandler extends WebhookHandler
 {
     public function start(): void
     {
-        $name = 'Zyxus';
+//        $name = 'Zyxus';
+
+        $chatInfo = $this->chat->info();
+
+        $name = $chatInfo['first_name'] ?? $chatInfo['username'] ?? 'пилот';
+
         $message = View::make('ppgracingbot.start', compact('name'))->render();
 
         $this->chat
