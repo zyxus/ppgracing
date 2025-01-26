@@ -32,5 +32,6 @@ class LogTelegramRequests
         }
 
         return $next($request);
+
     }
 }
