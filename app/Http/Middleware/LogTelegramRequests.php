@@ -24,7 +24,7 @@ class LogTelegramRequests
                 "```json\n" . json_encode($request->all(), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . "\n```";
 
             // Отправляем запрос в Telegram
-            $bot = TelegraphBot::find('PPGRacingBot'); // Получаем бота
+            $bot = TelegraphBot::where('name', 'PPGRacingBot')->first();
 
             Telegraph::bot($bot)
                 ->chat(env('TELEGRAM_ADMIN_CHAT_ID'))
