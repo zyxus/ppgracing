@@ -1,7 +1,7 @@
 <?php
 
-use App\Telegraph\PPGBotWebhookHandler;
-use DefStudio\Telegraph\Models\TelegraphBot;
+use App\Http\Webhooks\PPGBotWebhookHandler;
+use DefStudio\Telegraph\Facades\Telegraph;
 
-TelegraphBot::routes()
-    ->webhookHandler(PPGBotWebhookHandler::class);;
+Telegraph::routes()
+    ->webhookHandler(PPGBotWebhookHandler::class);
