@@ -3,10 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use DefStudio\Telegraph\Models\TelegraphBot;
 use DefStudio\Telegraph\Models\TelegraphChat;
 use Illuminate\Http\Request;
-use DefStudio\Telegraph\Facades\Telegraph;
 use Illuminate\Support\Facades\Log;
 
 class LogTelegramRequests

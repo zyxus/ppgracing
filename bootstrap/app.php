@@ -19,7 +19,7 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
 
         // Добавляем middleware для логирования Telegram-запросов
-        $middleware->append(LogTelegramRequests::class);
+//        $middleware->append(LogTelegramRequests::class);
 
         // Добавляем Inertia Middleware
         $middleware->prepend(HandleInertiaRequests::class);

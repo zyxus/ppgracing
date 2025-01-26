@@ -2,19 +2,24 @@
 
 namespace App\Http\Webhooks;
 
+use DefStudio\Telegraph\Facades\Telegraph;
 use DefStudio\Telegraph\Handlers\WebhookHandler;
 use DefStudio\Telegraph\Models\TelegraphBot;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\Stringable;
 
 class PPGBotWebhookHandler extends WebhookHandler
 {
     public function start(): void
     {
-        Log::info('🎯 Команда /start получена');
+        $name = 'Zyxus';
+        $message = View::make('ppgracingbot.start', compact('name'))->render();
 
-        $this->chat->message("👋 Привет! Я бот, чем могу помочь?")
+        $this->chat
+            ->photo('https://ppgracing.ru/images/ppg-racing-logo.png')
+            ->message($message)
             ->send();
     }
 
