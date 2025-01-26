@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use DefStudio\Telegraph\Models\TelegraphBot;
+use DefStudio\Telegraph\Models\TelegraphChat;
 use Illuminate\Http\Request;
 use DefStudio\Telegraph\Facades\Telegraph;
 use Illuminate\Support\Facades\Log;
@@ -24,11 +25,9 @@ class LogTelegramRequests
                 "```json\n" . json_encode($request->all(), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . "\n```";
 
             // Отправляем запрос в Telegram
-            $bot = TelegraphBot::where('name', 'PPGRacingBot')->first();
+            $chat = TelegraphChat::where('chat_id', '191142686')->first();
 
-            Telegraph::bot($bot)
-                ->chat(env('TELEGRAM_ADMIN_CHAT_ID'))
-                ->markdown("📩 *Новый запрос от Telegram:*\n```json\n" . json_encode($request->all(), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . "\n```")
+            $chat->markdown("📩 *Новый запрос от Telegram:*\n```json\n" . json_encode($request->all(), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . "\n```")
                 ->send();
         }
 
