@@ -50,7 +50,14 @@ return [
     |
     */
 
+
     'channels' => [
+
+        'telegram' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/telegram.log'),
+            'level' => 'info',
+        ],
 
         'stack' => [
             'driver' => 'stack',
