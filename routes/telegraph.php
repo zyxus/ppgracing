@@ -1,10 +1,7 @@
 <?php
 
-use App\Http\Controllers\TelegramBotController;
-use DefStudio\Telegraph\Facades\Telegraph;
+use App\Telegraph\PPGBotWebhookHandler;
 use DefStudio\Telegraph\Models\TelegraphBot;
 
 TelegraphBot::routes()
-    ->middleware(['web']);
-
-TelegraphBot::command('start', [TelegramBotController::class, 'start']);
+    ->webhookHandler(PPGBotWebhookHandler::class);;

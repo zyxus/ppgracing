@@ -25,7 +25,7 @@ class LogTelegramRequests
                 "```json\n" . json_encode($request->all(), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . "\n```";
 
             // Отправляем запрос в Telegram
-            $chat = TelegraphChat::where('chat_id', '191142686')->first();
+            $chat = TelegraphChat::where('chat_id', env('TELEGRAM_ADMIN_CHAT_ID'))->first();
 
             $chat->markdown("📩 *Новый запрос от Telegram:*\n```json\n" . json_encode($request->all(), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . "\n```")
                 ->send();

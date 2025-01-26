@@ -9,7 +9,14 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('webapp', [WebAppController::class, 'index'])->name('index');
-Route::get('webapp/register', [WebAppController::class, 'register'])->name('register');
-Route::get('webapp/profile', [WebAppController::class, 'profile'])->name('profile');
-Route::get('webapp/championships', [WebAppController::class, 'championships'])->name('championships');
+Route::get('webapp', [WebAppController::class, 'index'])
+    ->name('index');
+
+Route::get('webapp/register', [WebAppController::class, 'register'])
+    ->name('register');
+
+Route::get('webapp/profile', [WebAppController::class, 'profile'])
+    ->name('profile');
+
+Route::get('webapp/championships', [WebAppController::class, 'championships'])
+    ->name('championships');
