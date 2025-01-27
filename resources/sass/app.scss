@@ -4,11 +4,11 @@
 // 2️⃣ Настраиваем переменные до их использования
 $body-bg: #121212;       // Тёмный фон
 $body-color: #ffffff;    // Белый текст
-$primary: #ff9800;       // Оранжевый цвет кнопок и акцентов
+$customPrimary: #ff9800;       // Оранжевый цвет кнопок и акцентов
 
 // Добавляем кастомный цвет в `$theme-colors`
 $theme-colors: (
-    "primary": $primary,
+    "primary": $customPrimary,
     "dark": $body-bg,
     "light": $body-color
 );
@@ -19,7 +19,7 @@ $card-bg: #1a1a1a;
 $card-color: #ffffff;
 
 $input-group-addon-color: #1a1a1a;
-$input-group-addon-bg: $primary;
+$input-group-addon-bg: $customPrimary;
 
 // 3️⃣ Теперь импортируем переменные Bootstrap
 @import 'bootstrap/scss/variables';
@@ -46,16 +46,17 @@ body {
 }
 
 a {
-    color: $primary;
+    color: $customPrimary;
 }
 
 .btn-primary {
-    background-color: $primary !important;
-    border-color: darken($primary, 10%) !important;
+    background-color: $customPrimary !important;
+    border-color: darken($customPrimary, 10%) !important;
 
     &:hover {
-        background-color: lighten($primary, 5%) !important;
-        border-color: darken($primary, 15%) !important;
+        background-color: darken($customPrimary, 5%) !important;
+        border-color: darken($customPrimary, 15%) !important;
+        color: $white;
     }
 }
 

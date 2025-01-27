@@ -4,14 +4,32 @@
             <div class="col-md-8">
                 <div class="card-body">
                     <h3 class="card-title">{{ title }}</h3>
+                    <div class="card-text d-flex justify-content-between mb-2">
+                        <div><strong>{{ carType }}</strong></div>
+                        <div><strong>{{ startDate }} - {{ endDate }}</strong></div>
+                    </div>
                     <p class="card-text">
-                        <strong>Дата начала:</strong> {{ startDate }}<br />
-                        <strong>{{ carType }}</strong><br />
                         {{ description }}
                     </p>
+
+                    <button
+                        class="btn"
+                        :class="isParticipating ? 'btn-success' : 'btn-primary'"
+                        @click="toggleParticipation"
+                    >
+                        <span v-if="isParticipating">
+                            <i class="fa fa-check"></i>&nbsp;&nbsp;&nbsp;Участвуете
+                        </span>
+                        <span v-else>
+                            Участвовать
+                        </span>
+                    </button>
                 </div>
             </div>
-            <div class="col-md-4 d-flex align-items-center justify-content-center">
+            <div
+                v-if="logo"
+                class="col-md-4 d-flex align-items-center justify-content-center"
+            >
                 <img :src="logo" class="img-fluid rounded" alt="Логотип чемпионата" />
             </div>
         </div>
@@ -19,16 +37,29 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
 import { defineProps } from "vue";
 
+// Пропсы для компонента
 const props = defineProps({
     title: { type: String, required: true },
     startDate: { type: String, required: true },
-    carType: { carType: String, required: true },
+    endDate: { type: String, required: true },
+    carType: { type: String, required: true },
     description: { type: String, required: true },
-    logo: { type: String, required: true },
+    logo: { type: String, required: false },
+    initialParticipation: { type: Boolean, default: false }, // Участвует ли пользователь изначально
 });
+
+// Локальное состояние участия
+const isParticipating = ref(props.initialParticipation);
+
+// Функция переключения участия
+const toggleParticipation = () => {
+    isParticipating.value = !isParticipating.value;
+};
 </script>
+
 
 <style scoped lang="scss">
 @use '../../sass/app.scss' as *;
@@ -40,17 +71,42 @@ const props = defineProps({
         background-color: $body-bg;
 
         &:hover {
-            border: 1px solid $primary;
+            border: 1px solid $customPrimary;
         }
     }
 }
 
 .card-body {
-    padding: 16px;
+    padding: 24px 16px;
 }
 
 .img-fluid {
     max-width: 100%;
     height: auto;
+}
+
+.btn {
+    margin-top: 16px;
+}
+
+.btn-success {
+    background-color: $success;
+    border-color: $success;
+    color: $white;
+
+    &:hover {
+        background-color: darken($success, 10%); /* Затемняем цвет */
+        border-color: darken($success, 10%);
+    }
+}
+
+.btn-primary {
+    color: $white;
+
+    &:hover {
+        background-color: darken($customPrimary, 10%); /* Затемняем цвет */
+        border-color: darken($customPrimary, 10%);
+        color: $white;
+    }
 }
 </style>

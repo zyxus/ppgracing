@@ -13,3 +13,9 @@ const props = defineProps({
         <Navigation v-if="!hideNavbar" /> <!-- Показывать Navbar, если hideNavbar === false -->
     </div>
 </template>
+
+<style scoped lang="scss">
+.app-container {
+    padding: 16px 0 90px 0;
+}
+</style>

@@ -49,7 +49,7 @@ import { Link } from '@inertiajs/vue3';
     align-items: center;
     text-decoration: none;
     font-size: 12px;
-    color: $primary !important;
+    color: $customPrimary !important;
 }
 
 .custom-icon {
