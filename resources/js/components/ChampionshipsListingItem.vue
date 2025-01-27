@@ -88,25 +88,4 @@ const toggleParticipation = () => {
 .btn {
     margin-top: 16px;
 }
-
-.btn-success {
-    background-color: $success;
-    border-color: $success;
-    color: $white;
-
-    &:hover {
-        background-color: darken($success, 10%); /* Затемняем цвет */
-        border-color: darken($success, 10%);
-    }
-}
-
-.btn-primary {
-    color: $white;
-
-    &:hover {
-        background-color: darken($customPrimary, 10%); /* Затемняем цвет */
-        border-color: darken($customPrimary, 10%);
-        color: $white;
-    }
-}
 </style>

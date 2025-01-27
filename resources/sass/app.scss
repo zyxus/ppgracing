@@ -52,11 +52,23 @@ a {
 .btn-primary {
     background-color: $customPrimary !important;
     border-color: darken($customPrimary, 10%) !important;
+    color: $white;
 
     &:hover {
-        background-color: darken($customPrimary, 5%) !important;
-        border-color: darken($customPrimary, 15%) !important;
+        background-color: darken($customPrimary, 10%) !important;
+        border-color: darken($customPrimary, 10%) !important;
         color: $white;
+    }
+}
+
+.btn-success {
+    background-color: $success;
+    border-color: $success;
+    color: $white;
+
+    &:hover {
+        background-color: darken($success, 10%) !important;
+        border-color: darken($success, 10%);
     }
 }
 
