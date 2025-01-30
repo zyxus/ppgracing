@@ -35,12 +35,11 @@ const hideKeyboard = () => {
 
 <template>
     <Layout title="Регистрация">
-        <div class="container">
+        <div class="container mt-4">
             <div class="card mx-auto p-4 form-container">
 
-                <h5>Привет, гонщик!
+                <h4>Привет, гонщик!</h4>
 
-                </h5>
                 <p class="small mt-3 mb-4">Зарегистрируйся, чтобы получить доступ к чемпионатам и все такое...</p>
 
                 <form @submit.prevent class="form">
@@ -106,6 +105,7 @@ const hideKeyboard = () => {
 </template>
 
 <style scoped lang="scss">
+@use '../../sass/app.scss' as *;
 #name, #surname {
     width: 100px;
 }
@@ -113,15 +113,18 @@ const hideKeyboard = () => {
     opacity: 0.5;
     text-align: center;
 }
+.input-group-text {
+    color: $white;
+}
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    //min-height: 100vh;
     padding: 20px;
 }
 .form-container {
-    background: rgba(0, 0, 0, 0.65);
+    background: $cardBg;
     border-radius: 10px;
     padding: 20px;
     backdrop-filter: blur(1px);

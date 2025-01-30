@@ -64,11 +64,10 @@ const toggleParticipation = () => {
 <style scoped lang="scss">
 @use '../../sass/app.scss' as *;
 .card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 10px;
 
     &-custom {
-        background-color: $body-bg;
+        background-color: $cardBg;
 
         &:hover {
             border: 1px solid $customPrimary;
