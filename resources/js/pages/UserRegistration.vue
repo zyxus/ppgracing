@@ -35,7 +35,7 @@ const hideKeyboard = () => {
 
 <template>
     <Layout title="Регистрация">
-        <div class="container mt-4">
+        <div class="container">
             <div class="card mx-auto p-4 form-container">
 
                 <h4>Привет, гонщик!</h4>
@@ -121,7 +121,7 @@ const hideKeyboard = () => {
     justify-content: center;
     align-items: center;
     //min-height: 100vh;
-    padding: 20px;
+    padding: 10px 20px;
 }
 .form-container {
     background: $cardBg;
