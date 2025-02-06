@@ -6,7 +6,7 @@
         <div class="container mt-4">
             <div class="card mx-auto p-4 form-container">
                 <!-- Фото пользователя -->
-                <div class="d-flex flex-column align-items-center mb-4">
+                <div class="d-flex flex-column align-items-center mb-4-5">
                     <div class="photo-container rounded-circle d-flex align-items-center justify-content-center mb-3">
                         <img
                             v-if="user.photo"
@@ -72,7 +72,7 @@
                     </div>
 
                     <!-- Кнопка сохранения -->
-                    <div class="d-flex justify-content-center mt-4">
+                    <div class="d-flex justify-content-center mt-4-5">
                         <button type="submit" class="btn btn-primary custom-button">Сохранить изменения</button>
                     </div>
                 </form>
@@ -142,8 +142,10 @@ const saveProfile = () => {
 }
 
 .input-group-text {
-    color: $white;
-    width: 130px;
+    background: none;
+    color: $customPrimary;
+    width: 140px;
+    font-weight: 600;
 }
 
 .custom-text {
@@ -153,5 +155,17 @@ const saveProfile = () => {
 
 .custom-button {
     width: 100%;
+}
+
+.btn {
+    font-size: 18px;
+}
+
+.mt-4-5 {
+    margin-top: 2rem;
+}
+
+.mb-4-5 {
+    margin-bottom: 2rem;
 }
 </style>
