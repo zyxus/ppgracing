@@ -75,7 +75,8 @@ function onSubmit() {
 }
 
 .label-custom {
-    color: $textCustom;
+    background: none;
+    color: $primaryCustom;
 }
 
 .custom-input:focus {
